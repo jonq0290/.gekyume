@@ -1,0 +1,8 @@
+{
+  "active_skill": null,
+  "confidence_threshold": 0.80,
+  "context_window_size": 7,
+  "turn_count": 0,
+  "skill_turns": [],
+  "queued_requests": []
+}

@@ -1,0 +1,24 @@
+{
+  "name": "brand_kit",
+  "display_name": "Brand Kit",
+  "description": "Manages and applies brand identity guidelines, design tokens, typography, color palettes, and creative assets across workspaces. Use when working with visual identity, styling systems, or design consistency.",
+  "accepted_input_types": ["text", "file", "image"],
+  "trigger_phrases": [
+    "apply the brand kit",
+    "get brand assets",
+    "use the design system",
+    "set up styling and colors",
+    "apply brand identity",
+    "update our color palette",
+    "what are our brand colors",
+    "design tokens"
+  ],
+  "file": "skills/brand_kit.md",
+  "routable": true,
+  "examples": [
+    "Apply our brand colors to this landing page",
+    "What fonts does our brand use?",
+    "Set up the design tokens for the new project",
+    "Make sure this design matches our brand guidelines"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "google-workspace-cli",
+  "display_name": "Google Workspace & Apps Script Local Manager",
+  "description": "Manages Google Workspace and Apps Script projects locally using clasp (Google Workspace CLI). Handles authentication, cloning, pulling, pushing, deploying, versioning, API management, and local development workflow setup. Use when the user wants to create, edit, deploy, or run Apps Script code, interact with Google Workspace APIs, or execute clasp commands.",
+  "accepted_input_types": [
+    "text"
+  ],
+  "trigger_phrases": [
+    "/clasp",
+    "clasp",
+    "google apps script",
+    "apps script",
+    "deploy apps script",
+    "push to apps script",
+    "pull apps script",
+    "clasp login",
+    "clasp push",
+    "clasp pull"
+  ],
+  "file": "skills/google-workspace-cli.md",
+  "routable": true,
+  "examples": [
+    "Help me deploy my Google Sheets script using clasp",
+    "clasp push changes to script.google.com",
+    "clasp clone 1A2B3C4D5E6F",
+    "Create a new Google Workspace standalone project locally",
+    "Log in to clasp CLI and verify status"
+  ]
+}

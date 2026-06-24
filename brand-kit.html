@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coca-Cola - Mock Brand Kit</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Design System Tokens */
+    :root {
+      --primary-red: #F40009;
+      --primary-red-dark: #C30F15;
+      --bg-cream: #FBF9F5;
+      --card-white: #FFFFFF;
+      --text-charcoal: #121212;
+      --text-muted: #555555;
+      --border-color: #EADFD0;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 40px rgba(244, 0, 9, 0.08);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      
+      --font-display: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-charcoal);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Container & Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation Bar */
+    header.main-nav {
+      position: sticky;
+      top: 0;
+      background-color: rgba(251, 249, 245, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 100;
+      padding: 1rem 0;
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo-text {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--primary-red);
+      letter-spacing: -0.03em;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-logo-text svg {
+      fill: var(--primary-red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-charcoal);
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-red);
+    }
+
+    /* Hero Section */
+    section.hero {
+      background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+      color: var(--card-white);
+      padding: 8rem 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 0 40px 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* The Coca-Cola Wave Graphic in Background */
+    .hero-wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .hero-tagline {
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.85);
+      animation: fadeInDown 0.8s ease;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 4.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Page Sections */
+    section.page-section {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary-red);
+      border-radius: 2px;
+    }
+
+    /* Brand Intro Section */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .intro-text {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: var(--text-charcoal);
+    }
+
+    .intro-graphic {
+      background: var(--card-white);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-graphic::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background-color: var(--primary-red);
+    }
+
+    .intro-graphic-year {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--primary-red);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro-graphic-label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Core Values Section */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .value-card {
+      background-color: var(--card-white);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(244, 0, 9, 0.2);
+    }
+
+    .value-icon {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(244, 0, 9, 0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--primary-red);
+    }
+
+    .value-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .value-desc {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .value-example {
+      background-color: var(--bg-cream);
+      border-radius: 8px;
+      padding: 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-left: 3px solid var(--primary-red);
+    }
+
+    /* Color Palette Section */
+    .palette-container {
+      background: var(--card-white);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .color-card {
+      text-align: left;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .color-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .color-swatch {
+      height: 140px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .color-swatch::after {
+      content: "Click to Copy";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(18, 18, 18, 0.8);
+      color: var(--card-white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      border-radius: 20px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .color-swatch:hover::after {
+      opacity: 1;
+    }
+
+    .color-info {
+      padding: 1.5rem;
+      background: var(--card-white);
+    }
+
+    .color-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+
+    .color-code {
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .proportion-bar-container {
+      margin-top: 2rem;
+    }
+
+    .proportion-title {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .proportion-bar {
+      height: 30px;
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .bar-cream { background-color: #FBF9F5; width: 60%; }
+    .bar-red { background-color: #F40009; width: 30%; }
+    .bar-black { background-color: #121212; width: 10%; }
+
+    .proportion-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .proportion-labels span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .proportion-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot-cream { background-color: #FBF9F5; border: 1px solid var(--border-color); }
+    .dot-red { background-color: #F40009; }
+    .dot-black { background-color: #121212; }
+
+    /* Typography Section */
+    .typography-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .typo-spec-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .typo-header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .typo-font-name {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--primary-red);
+    }
+
+    .typo-font-weights {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .spec-line {
+      margin-bottom: 1.5rem;
+    }
+
+    .spec-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .spec-preview-h1 {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--text-charcoal);
+    }
+
+    .spec-preview-h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-charcoal);
+    }
+
+    .spec-preview-body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-charcoal);
+    }
+
+    .spec-preview-caption {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Logo Direction Section */
+    .logo-spec-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 3.5rem;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .logo-preview-box {
+      background-color: var(--primary-red);
+      border-radius: 16px;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .logo-preview-box svg {
+      width: 70%;
+      height: auto;
+      fill: var(--accent-white);
+    }
+
+    .logo-preview-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(255,255,255,0.2);
+      color: var(--card-white);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .logo-spec-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      color: var(--text-charcoal);
+    }
+
+    .logo-spec-list {
+      list-style-type: none;
+    }
+
+    .logo-spec-item {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .logo-spec-item::before {
+      content: "▪";
+      color: var(--primary-red);
+      font-size: 1.25rem;
+      position: absolute;
+      left: 0;
+      top: -0.2rem;
+    }
+
+    .logo-spec-item strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--text-charcoal);
+      margin-bottom: 0.25rem;
+    }
+
+    .logo-spec-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Brand Vibe Section */
+    .vibe-quote-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 4rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow-md);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .quote-icon {
+      font-size: 6rem;
+      font-family: var(--font-display);
+      color: rgba(244, 0, 9, 0.08);
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+      line-height: 1;
+    }
+
+    .vibe-quote-text {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--primary-red-dark);
+      position: relative;
+      z-index: 10;
+      margin-bottom: 2rem;
+    }
+
+    .vibe-quote-author {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Tone & Voice Section */
+    .tone-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+    }
+
+    .tone-overview-card {
+      background: var(--primary-red);
+      color: var(--card-white);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .tone-overview-card h3 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tone-overview-card p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    .voice-traits-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .voice-trait-card {
+      background: var(--card-white);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .voice-trait-header {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary-red);
+    }
+
+    .voice-trait-def {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .voice-trait-examples {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .voice-ex-good {
+      color: #2E7D32;
+      font-weight: 500;
+    }
+
+    .voice-ex-bad {
+      color: #C62828;
+      font-weight: 500;
+    }
+
+    /* Brand Guidelines Section */
+    .guidelines-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .guide-column {
+      background: var(--card-white);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .guide-column-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .guide-column-title svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .do-title { color: #2E7D32; }
+    .dont-title { color: #C62828; }
+
+    .guide-list {
+      list-style-type: none;
+    }
+
+    .guide-item {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      font-size: 0.95rem;
+    }
+
+    .guide-item:last-child {
+      border-bottom: none;
+    }
+
+    .guide-marker {
+      font-size: 1.2rem;
+      line-height: 1;
+      font-weight: bold;
+    }
+
+    .do-marker { color: #2E7D32; }
+    .dont-marker { color: #C62828; }
+
+    .guide-content strong {
+      display: block;
+      color: var(--text-charcoal);
+      margin-bottom: 0.25rem;
+    }
+
+    .guide-content p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+    footer.main-footer {
+      background-color: var(--text-charcoal);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 4rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      border-radius: 40px 40px 0 0;
+    }
+
+    footer.main-footer a {
+      color: var(--card-white);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    footer.main-footer a:hover {
+      color: var(--primary-red);
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.75rem;
+      color: var(--card-white);
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .footer-logo span {
+      color: var(--primary-red);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    /* Toast Notification for copying colors */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--text-charcoal);
+      color: var(--card-white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .intro-grid, .typography-grid, .logo-spec-card, .tone-grid, .guidelines-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .logo-preview-box {
+        aspect-ratio: 16/9;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toast Element -->
+  <div id="toast" class="toast">Color code copied to clipboard!</div>
+
+  <!-- Navigation -->
+  <header class="main-nav">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo-text">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5c-2.48 0-4.5-2.02-4.5-4.5s2.02-4.5 4.5-4.5 4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5z"/>
+        </svg>
+        Coca-Cola
+      </a>
+      <ul class="nav-links">
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#values">Core Values</a></li>
+        <li><a href="#colors">Colors</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#logo">Logo</a></li>
+        <li><a href="#tone">Tone</a></li>
+        <li><a href="#guidelines">Guidelines</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <svg class="hero-wave" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#ffffff" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,117.3C672,117,768,171,864,181.3C960,192,1056,160,1152,144C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+    <div class="container hero-content">
+      <p class="hero-tagline">Official Mock Brand Kit</p>
+      <h1 class="hero-title">Real Magic. Timeless Heritage.</h1>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section id="intro" class="page-section">
+    <div class="container">
+      <h2 class="section-title">Brand Introduction</h2>
+      <div class="intro-grid">
+        <div class="intro-text">
+          <p>For over a century, Coca-Cola has been a simple invitation to slow down, share a moment, and open up a bottle of happiness. Rooted in a timeless heritage of warmth and authenticity, we believe that the smallest moments of connection can bridge any gap. Whether shared at a retro diner counter or a modern family table, our purpose remains unchanged: to refresh the world, inspire moments of optimism, and foster a sense of belonging. Guided by our commitment to integrity and community, we are dedicated to crafting a sustainable future that honors our past while looking forward to a brighter, shared tomorrow. Welcome to our table—let's share a moment together.</p>
+        </div>
+        <div class="intro-graphic">
+          <div class="intro-graphic-year">1886</div>
+          <div class="intro-graphic-label">Established & Refreshing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section id="values" class="page-section">
+    <div class="container">
+      <h2 class="section-title">Core Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="value-title">Integrity</h3>
+          <p class="value-desc">Honest, transparent, and accountable. We hold ourselves to the highest standards of quality, ensuring every bottle and interaction lives up to our heritage.</p>
+          <div class="value-example">
+            <strong>How it shows up:</strong> Publicly sharing nutritional info and environmental goals with clear, accessible metrics.
+          </div>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <h3 class="value-title">Innovation</h3>
+          <p class="value-desc">Forward-thinking and solution-oriented, not afraid to evolve. While we honor our history, we constantly seek smarter, more sustainable ways to package, distribute, and share.</p>
+          <div class="value-example">
+            <strong>How it shows up:</strong> Launching 100% recycled PET bottles and investing in carbon-neutral delivery fleets.
+          </div>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 class="value-title">Respect for Community</h3>
+          <p class="value-desc">Inclusive, listening, and giving back. We design spaces and experiences that bring people together, actively supporting local communities and initiatives.</p>
+          <div class="value-example">
+            <strong>How it shows up:</strong> Funding local park restoration programs and community recycling hubs globally.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Color Palette Section -->
+  <section id="colors" class="page-section">
+    <div class="container">
+      <h2 class="section-title">Color Palette</h2>
+      <div class="palette-container">
+        <div class="palette-grid">
+          
+          <!-- Color 1 -->
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #F40009;" onclick="copyColor('#F40009')"></div>
+            <div class="color-info">
+              <h4 class="color-name">Coca-Cola Red</h4>
+              <p class="color-code">HEX: #F40009</p>
+              <p class="color-code">RGB: 244, 0, 9</p>
+            </div>
+          </div>
+
+          <!-- Color 2 -->
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #FBF9F5;" onclick="copyColor('#FBF9F5')"></div>
+            <div class="color-info">
+              <h4 class="color-name">Vintage Cream</h4>
+              <p class="color-code">HEX: #FBF9F5</p>
+              <p class="color-code">RGB: 251, 249, 245</p>
+            </div>
+          </div>
+
+          <!-- Color 3 -->
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #FFFFFF; border-bottom: 1px solid var(--border-color);" onclick="copyColor('#FFFFFF')"></div>
+            <div class="color-info">
+              <h4 class="color-name">Classic White</h4>
+              <p class="color-code">HEX: #FFFFFF</p>
+              <p class="color-code">RGB: 255, 255, 255</p>
+            </div>
+          </div>
+
+          <!-- Color 4 -->
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #121212;" onclick="copyColor('#121212')"></div>
+            <div class="color-info">
+              <h4 class="color-name">Charcoal Black</h4>
+              <p class="color-code">HEX: #121212</p>
+              <p class="color-code">RGB: 18, 18, 18</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="proportion-bar-container">
+          <h4 class="proportion-title">Usage Proportions (60-30-10 Rule)</h4>
+          <div class="proportion-bar">
+            <div class="bar-cream" title="60% Vintage Cream"></div>
+            <div class="bar-red" title="30% Coca-Cola Red"></div>
+            <div class="bar-black" title="10% Charcoal Black"></div>
+          </div>
+          <div class="proportion-labels">
+            <span><span class="proportion-dot dot-cream"></span>60% Vintage Cream (Canvas/Background)</span>
+            <span><span class="proportion-dot dot-red"></span>30% Coca-Cola Red & White (Primary Branding)</span>
+            <span><span class="proportion-dot dot-black"></span>10% Charcoal Black (Readable Body Copy)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typography Section -->
+  <section id="typography" class="page-section">
+    <div class="container">
+      <h2 class="section-title">Typography System</h2>
+      <div class="typography-grid">
+        
+        <div class="typo-spec-card">
+          <div class="typo-header">
+            <h3 class="typo-font-name">Montserrat</h3>
+            <p class="typo-font-weights">Weights: 700 (Bold), 900 (Black)</p>
+          </div>
+          <div class="spec-line">
+            <span class="spec-label">H1 Header Preview (3.0rem / 48px)</span>
+            <h1 class="spec-preview-h1">Real Magic.</h1>
+          </div>
+          <div class="spec-line">
+            <span class="spec-label">H2 Header Preview (2.0rem / 32px)</span>
+            <h2 class="spec-preview-h2">Share Happiness</h2>
+          </div>
+          <div class="spec-line">
+            <span class="spec-label">Usage Context</span>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Used exclusively for core marketing titles, section headers, hero text, and primary call-to-actions. Never used for long paragraphs.</p>
+          </div>
+        </div>
+
+        <div class="typo-spec-card">
+          <div class="typo-header">
+            <h3 class="typo-font-name">Inter</h3>
+            <p class="typo-font-weights">Weights: 400 (Regular), 600 (Semi-Bold)</p>
+          </div>
+          <div class="spec-line">
+            <span class="spec-label">Body Text Preview (1.0rem / 16px)</span>
+            <p class="spec-preview-body">Coca-Cola has been refreshing the world for over 130 years, bringing people closer together through shared experiences and simple moments of joy.</p>
+          </div>
+          <div class="spec-line">
+            <span class="spec-label">Caption Preview (0.75rem / 12px)</span>
+            <p class="spec-preview-caption">* Please refer to local packaging guidelines for local ingredient disclosures.</p>
+          </div>
+          <div class="spec-line">
+            <span class="spec-label">Usage Context</span>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Used for all digital body copy, navigation links, lists, bullet points, labels, and metadata. Ensures optimal legibility on mobile viewports.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Logo Direction Section -->
+  <section id="logo" class="page-section">
+    <div class="container">
+      <h2 class="section-title">Logo Direction</h2>
+      <div class="logo-spec-card">
+        <div class="logo-preview-box">
+          <div class="logo-preview-badge">Signature Logo Mark</div>
+          <!-- Vector placeholder representing Spencerian style typography wave -->
+          <svg viewBox="0 0 100 40">
+            <path d="M10 25 C 25 15, 35 30, 50 20 C 65 10, 75 25, 90 15" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="900" font-size="10" fill="white" letter-spacing="-0.05em">Coca-Cola</text>
+          </svg>
+        </div>
+        <div>
+          <h3 class="logo-spec-title">Logo Brief & Specifications</h3>
+          <ul class="logo-spec-list">
+            <li class="logo-spec-item">
+              <strong>Recommended Mark Type</strong>
+              <p>Combination Mark containing the flowing Spencerian script wordmark paired with the iconic dynamic contour ribbon (the wave) for fluid movement and energy.</p>
+            </li>
+            <li class="logo-spec-item">
+              <strong>Stylistic Approach</strong>
+              <p>Timeless Heritage with Modern Clarity. Preserve the retro script for brand equity but apply clean padding constraints (minimum padding equal to the letter C) for mobile screens.</p>
+            </li>
+            <li class="logo-spec-item">
+              <strong>Iconography Direction</strong>
+              <p>The dynamic contour ribbon serves as the secondary mark. A clean vector silhouette of the classic contour glass bottle can be used as a background watermark or graphic detail.</p>
+            </li>
+            <li class="logo-spec-item">
+              <strong>Usage Versatility</strong>
+              <p>Must operate in single-color Red on White background or White on solid Red background. Do not place logo script directly over complex multi-color photography.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Vibe Section -->
+  <section class="page-section">
+    <div class="container">
+      <h2 class="section-title">Brand Vibe</h2>
+      <div class="vibe-quote-card">
+        <span class="quote-icon">“</span>
+        <p class="vibe-quote-text">Welcoming, approachable, and classic. The brand vibes evoke stepping into a warm, sunlit American diner filled with laughter, simple connections, and generational nostalgia—perfectly balanced with clean, modern clarity.</p>
+        <div class="vibe-quote-author">Emotional Anchor Statement</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tone of Voice Section -->
+  <section id="tone" class="page-section">
+    <div class="container">
+      <h2 class="section-title">Tone of Voice</h2>
+      <div class="tone-grid">
+        <div class="tone-overview-card">
+          <h3>The Vocal Style</h3>
+          <p>Our voice acts as a warm, optimistic, and welcoming host. We speak with the authentic familiarity of an old friend, keeping our messaging clean, simple, and down-to-earth while inspiring small moments of everyday joy.</p>
+        </div>
+        <div class="voice-traits-container">
+          
+          <div class="voice-trait-card">
+            <h4 class="voice-trait-header">Optimistic & Uplifting</h4>
+            <p class="voice-trait-def">Highlighting the positive and focusing on moments of shared happiness.</p>
+            <div class="voice-trait-examples">
+              <div class="voice-ex-good">Do: "Every day holds a reason to smile; let's find it together."</div>
+              <div class="voice-ex-bad">Don't: "Maximize your satisfaction levels with our carbonated drink."</div>
+            </div>
+          </div>
+
+          <div class="voice-trait-card">
+            <h4 class="voice-trait-header">Warm & Inclusive</h4>
+            <p class="voice-trait-def">Speaking to everyone, bringing different generations and communities closer.</p>
+            <div class="voice-trait-examples">
+              <div class="voice-ex-good">Do: "Pull up a chair and share a cold one with us."</div>
+              <div class="voice-ex-bad">Don't: "Yo, grab a drink right now, it's lit."</div>
+            </div>
+          </div>
+
+          <div class="voice-trait-card">
+            <h4 class="voice-trait-header">Simple & Direct</h4>
+            <p class="voice-trait-def">Avoiding marketing fluff and overly scientific or complex jargon.</p>
+            <div class="voice-trait-examples">
+              <div class="voice-ex-good">Do: "Real taste. Simple ingredients. Pure refreshment."</div>
+              <div class="voice-ex-bad">Don't: "A synergistic formulation designed for beverage hydration optimization."</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guidelines Section -->
+  <section id="guidelines" class="page-section">
+    <div class="container">
+      <h2 class="section-title">Brand Guidelines</h2>
+      <div class="guidelines-grid">
+        
+        <!-- Do Column -->
+        <div class="guide-column">
+          <h3 class="guide-column-title do-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Usage Do's
+          </h3>
+          <ul class="guide-list">
+            <li class="guide-item">
+              <span class="guide-marker do-marker">✓</span>
+              <div class="guide-content">
+                <strong>Background Consistency</strong>
+                <p>Use Vintage Cream as the primary canvas background color to maintain warmth and nostalgia.</p>
+              </div>
+            </li>
+            <li class="guide-item">
+              <span class="guide-marker do-marker">✓</span>
+              <div class="guide-content">
+                <strong>Logo Padding</strong>
+                <p>Keep a clear space equal to the height of the letter "C" in the Coca-Cola script around the entire logo.</p>
+              </div>
+            </li>
+            <li class="guide-item">
+              <span class="guide-marker do-marker">✓</span>
+              <div class="guide-content">
+                <strong>Header Typography</strong>
+                <p>Use Montserrat Bold/Black for display titles to ensure clean, high-impact readability.</p>
+              </div>
+            </li>
+            <li class="guide-item">
+              <span class="guide-marker do-marker">✓</span>
+              <div class="guide-content">
+                <strong>Single-Color Logo Contrast</strong>
+                <p>Use the solid Classic White logo on solid Coca-Cola Red backgrounds for maximum accessibility.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Don't Column -->
+        <div class="guide-column">
+          <h3 class="guide-column-title dont-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+            Usage Don'ts
+          </h3>
+          <ul class="guide-list">
+            <li class="guide-item">
+              <span class="guide-marker dont-marker">✗</span>
+              <div class="guide-content">
+                <strong>Logo Distortion</strong>
+                <p>Never stretch, rotate, skew, or apply complex drop shadows to the script logo wordmark.</p>
+              </div>
+            </li>
+            <li class="guide-item">
+              <span class="guide-marker dont-marker">✗</span>
+              <div class="guide-content">
+                <strong>Red Body Canvas</strong>
+                <p>Do not use Coca-Cola Red as a background color for large sections of body text, as it degrades readability.</p>
+              </div>
+            </li>
+            <li class="guide-item">
+              <span class="guide-marker dont-marker">✗</span>
+              <div class="guide-content">
+                <strong>Font Mixing</strong>
+                <p>Do not introduce off-palette fonts or display scripts. Stick strictly to Montserrat and Inter.</p>
+              </div>
+            </li>
+            <li class="guide-item">
+              <span class="guide-marker dont-marker">✗</span>
+              <div class="guide-content">
+                <strong>Logo on Photo Textures</strong>
+                <p>Do not overlay the script logo directly onto complex or busy photographic textures without a backing card.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-logo">Coca-Cola <span>Brand Kit</span></div>
+      <p>Created for reference. All rights and trademarks belong to The Coca-Cola Company.</p>
+      <ul class="footer-links">
+        <li><a href="#intro">Top</a></li>
+        <li><a href="#colors">Colors</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#guidelines">Guidelines</a></li>
+      </ul>
+      <p style="margin-top: 1rem; opacity: 0.4; font-size: 0.75rem;">&copy; 2026. Custom Mock Brand Kit. Powered by gekyume OS.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Copy color functionality
+    function copyColor(hexValue) {
+      navigator.clipboard.writeText(hexValue).then(() => {
+        const toast = document.getElementById('toast');
+        toast.textContent = `Copied: ${hexValue}`;
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+    }
+  </script>
+</body>
+</html>

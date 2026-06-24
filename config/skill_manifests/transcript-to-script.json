@@ -1,0 +1,25 @@
+{
+  "name": "transcript-to-script",
+  "display_name": "Transcript to Script Converter",
+  "description": "Processes raw video transcripts to produce ready-to-film scripts (Safe & Bold versions), social media captions, and SEO packages following the SCRAPE framework. Use when the user presents video transcripts, asks to rewrite transcripts into scripts, wants social media captions/SEO tags for their video, or invokes '/transcript-to-script'.",
+  "accepted_input_types": [
+    "text",
+    "file"
+  ],
+  "trigger_phrases": [
+    "/transcript-to-script",
+    "transcript-to-script",
+    "rewrite transcript",
+    "convert transcript to script",
+    "video transcript script conversion",
+    "adapt video transcript",
+    "generate script from transcript"
+  ],
+  "file": "skills/transcript-to-script.md",
+  "routable": true,
+  "examples": [
+    "/transcript-to-script with transcript.txt",
+    "Please rewrite this video transcript into a ready-to-film script",
+    "Convert my transcript into a short-form video script and write a caption for it"
+  ]
+}

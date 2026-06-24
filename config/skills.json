@@ -1,0 +1,131 @@
+{
+  "manifests_dir": "config/skill_manifests",
+  "skills": [
+    {
+      "name": "gemini-skills",
+      "description": "Create new Gemini CLI skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill for Gemini CLI, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "trigger_phrases": [
+        "create a new skill",
+        "build a skill for",
+        "improve this skill",
+        "optimize the skill description",
+        "run evals on my skill",
+        "benchmark this skill"
+      ],
+      "file": "skills/skill_builder.md"
+    },
+    {
+      "name": "orchestrator",
+      "description": "Routes and delegates user requests to specialized skill agents using LLM-based intent classification (RISEN framework). Manages session context, error handling, request queuing, routing history, and result relay. The single interface the user always interacts with. Use when coordinating tasks, orchestrating multi-step workflows, listing available skills, viewing routing history, or changing the confidence threshold.",
+      "trigger_phrases": [
+        "coordinate these agents",
+        "run the orchestrator",
+        "delegate these tasks",
+        "manage the agent team",
+        "orchestrate my workflow",
+        "list available skills",
+        "show routing history",
+        "what skills do you have",
+        "change confidence threshold",
+        "how does routing work"
+      ],
+      "file": "skills/orchestrator.md"
+    },
+    {
+      "name": "brand_kit",
+      "description": "Manages and applies brand identity guidelines, design tokens, and creative assets across workspaces.",
+      "trigger_phrases": [
+        "apply the brand kit",
+        "get brand assets",
+        "use the design system",
+        "set up styling and colors",
+        "apply brand identity"
+      ],
+      "file": "skills/brand_kit.md"
+    },
+    {
+      "name": "carousel",
+      "description": "Creates and formats interactive content carousels for markdown UI presentations.",
+      "trigger_phrases": [
+        "show a carousel",
+        "create a slide carousel",
+        "build a carousel component",
+        "make a carousel presentation",
+        "generate a content slider"
+      ],
+      "file": "skills/carousel.md"
+    },
+    {
+      "name": "brand-kit-builder",
+      "description": "Interactive brand kit consultant that guides users through visual and verbal identity development. Analyzes provided visual references (images, URLs) to extract color palettes, typography, mood, and aesthetic, then builds brand elements one at a time through targeted questions. Produces a complete, styled HTML brand kit page.",
+      "trigger_phrases": [
+        "build a brand kit",
+        "brand-kit-builder",
+        "create a brand kit",
+        "brand kit agent",
+        "brand kit builder"
+      ],
+      "file": "skills/brand-kit-builder.md"
+    },
+    {
+      "name": "transcript-to-script",
+      "description": "Processes raw video transcripts to produce ready-to-film scripts (Safe & Bold versions), social media captions, and SEO packages following the SCRAPE framework. Use when the user presents video transcripts, asks to rewrite transcripts into scripts, wants social media captions/SEO tags for their video, or invokes '/transcript-to-script'.",
+      "trigger_phrases": [
+        "/transcript-to-script",
+        "transcript-to-script",
+        "rewrite transcript",
+        "convert transcript to script",
+        "video transcript script conversion",
+        "adapt video transcript",
+        "generate script from transcript"
+      ],
+      "file": "skills/transcript-to-script.md"
+    },
+    {
+      "name": "hindsight-memory",
+      "description": "Manages long-term agent memory using the Hindsight framework (Retain, Recall, Reflect). Extracts facts, user preferences, and observations from chat history to update memory/hindsight_memories.json, queries relevant context, and consolidates insights. Use when the user requests memory retrieval, fact extraction, reflection, updating preferences, or invokes '/hindsight'.",
+      "trigger_phrases": [
+        "/hindsight",
+        "hindsight memory",
+        "recall past session",
+        "reflect on history",
+        "retain memory",
+        "consolidate memory",
+        "update memory bank",
+        "what do you remember about"
+      ],
+      "file": "skills/hindsight-memory.md"
+    },
+    {
+      "name": "autoresearch",
+      "description": "Runs autonomous machine learning research experiments by training models in a continuous loop. It modifies train.py, runs short training runs, evaluates the validation bits per byte (val_bpb), and uses Git to keep improvements or revert failures. Use when the user requests starting, resuming, or managing an autonomous experiment loop, or refers to Karpathy's 'autoresearch' setup.",
+      "trigger_phrases": [
+        "/autoresearch",
+        "autoresearch",
+        "run autonomous research",
+        "start research loop",
+        "machine learning research agent",
+        "autonomous experimentation loop"
+      ],
+      "file": "skills/autoresearch.md"
+    },
+    {
+      "name": "google-workspace-cli",
+      "description": "Manages Google Apps Script projects locally using the clasp CLI (Google Workspace CLI). Handles authentication, cloning/creating projects, pulling/pushing code, managing versions, and deploying standalone scripts or container-bound scripts (Sheets, Docs, Slides, etc.). Use when the user wants to work with Google Apps Script, local Google Workspace development, or runs clasp commands.",
+      "trigger_phrases": [
+        "/clasp",
+        "clasp",
+        "google apps script",
+        "apps script",
+        "deploy apps script",
+        "push to apps script",
+        "pull apps script",
+        "clasp login",
+        "clasp push",
+        "clasp pull"
+      ],
+      "file": "skills/google-workspace-cli.md"
+    }
+  ]
+}
+
