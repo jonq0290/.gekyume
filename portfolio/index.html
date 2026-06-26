@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jon | Vibe Coder &amp; AI Agent Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sticky Header -->
+  <header>
+    <div class="container nav">
+      <div class="logo">Jon.dev</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="theme-toggle" aria-label="Toggle theme">☀️</button></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero" id="hero">
+      <h1>Hi, my name is Jon.</h1>
+      <p class="subtitle">I'm a <span>Vibe Coder</span> specializing in building <span>AI Agents</span> and high-fidelity web experiences.</p>
+      <a href="#projects" class="cta-btn">View My Work</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>I am an engineer who focuses on AI-assisted development. By leveraging advanced vibe coding methodologies, I accelerate the software lifecycle, building complex interactive applications and custom AI Agents.</p>
+          <p>Here are a few areas of focus in my workflow:</p>
+          <div class="tech-skills">
+            <ul class="skills-grid">
+              <li>Vibe Coding</li>
+              <li>AI Agent Architecture</li>
+              <li>TypeScript / React</li>
+              <li>Next.js Development</li>
+              <li>Python Agent SDKs</li>
+              <li>GitHub Workflows</li>
+            </ul>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="card-frame">
+            <!-- Sleek background card pattern to look premium without requiring a real external image -->
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #151e33, #0b0f19); display: flex; align-items: center; justify-content: center; position: relative;">
+              <div style="position: absolute; width: 140px; height: 140px; border-radius: 50%; border: 2px dashed rgba(100, 255, 218, 0.4); animation: rotate 20s linear infinite;"></div>
+              <span style="font-family: var(--font-mono); font-size: 3rem; color: var(--accent-color); font-weight: 700;">&lt;J/&gt;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+      <h2>Featured Work</h2>
+      <div class="project-grid">
+        <!-- Vibe coding Netlify showcase project -->
+        <article class="project-card">
+          <div>
+            <div class="project-header">
+              <span class="project-icon">🌐</span>
+              <a href="https://heartfelt-cucurucho-950946.netlify.app/" target="_blank" aria-label="Live Demo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+            <h3>Vibe Crafted App</h3>
+            <p>An interactive, responsive web application built entirely using high-speed vibe coding and AI coordination.</p>
+          </div>
+          <div class="project-footer">
+            <a href="https://heartfelt-cucurucho-950946.netlify.app/" target="_blank" class="project-link">Live Demo ↗</a>
+          </div>
+        </article>
+
+        <!-- Project Space pointing to real GitHub -->
+        <article class="project-card">
+          <div>
+            <div class="project-header">
+              <span class="project-icon">📂</span>
+              <a href="https://github.com/jonq0290" target="_blank" aria-label="GitHub Repository">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+            <h3>Agent Coordinator</h3>
+            <p>An experimental framework for initializing, deploying, and managing multiple local AI Agents.</p>
+          </div>
+          <div class="project-footer">
+            <span class="project-link">Python · LangChain</span>
+          </div>
+        </article>
+
+        <!-- Nebula Engine pointing to real GitHub -->
+        <article class="project-card">
+          <div>
+            <div class="project-header">
+              <span class="project-icon">📂</span>
+              <a href="https://github.com/jonq0290" target="_blank" aria-label="GitHub Repository">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+            <h3>Vibe Engine</h3>
+            <p>A fast, lightweight template parser and custom utility runner for markdown site generators.</p>
+          </div>
+          <div class="project-footer">
+            <span class="project-link">TypeScript · Node</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2>Get In Touch</h2>
+      <p>I am currently open to new opportunities, collaborations, or just connecting. Let's discuss your next project!</p>
+      <a href="mailto:jon@example.com" class="contact-btn">Email Me</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="https://github.com/jonq0290" target="_blank" aria-label="GitHub">GitHub</a>
+        <a href="https://linkedin.com/in/jon" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+      <p>Designed &amp; Built by Jon &copy; 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  
+  <!-- Inline rotating animation style for the placeholder visual -->
+  <style>
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</body>
+</html>
