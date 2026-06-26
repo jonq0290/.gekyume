@@ -197,7 +197,7 @@ export default function Home() {
           <a href="https://github.com/jonq0290" target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 dark:hover:text-teal-400 transition">
             GitHub
           </a>
-          <a href="https://linkedin.com/in/jon" target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 dark:hover:text-teal-400 transition">
+          <a href="https://www.linkedin.com/in/jon-qamili-02558234a/" target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 dark:hover:text-teal-400 transition">
             LinkedIn
           </a>
         </div>
