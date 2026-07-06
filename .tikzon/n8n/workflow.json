@@ -1,0 +1,79 @@
+{
+  "name": "tikzon_daily_research_pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 5 * * *"
+            }
+          ]
+        }
+      },
+      "id": "c1f7a465-b1a3-4b68-b80c-78a0d4c9d924",
+      "name": "Daily 5am Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e2a22f3c-5dc8-4b7b-89ff-e74dbb6b28eb",
+      "name": "Manual Supplemental Scan",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        450
+      ]
+    },
+    {
+      "parameters": {
+        "command": "python c:/Users/Jon/Desktop/.tikzon/scripts/main.py"
+      },
+      "id": "f550ee8c-f09b-4cd3-ac56-788df0a1ad96",
+      "name": "Execute .tikzon Pipeline",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        480,
+        360
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 5am Trigger": {
+      "main": [
+        [
+          {
+            "node": "Execute .tikzon Pipeline",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual Supplemental Scan": {
+      "main": [
+        [
+          {
+            "node": "Execute .tikzon Pipeline",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionTimeout": 3600
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": {}
+}

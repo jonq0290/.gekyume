@@ -1,0 +1,7 @@
+{
+  "products": [],
+  "last_scan": null,
+  "scan_count": 0,
+  "schema_version": "1.0",
+  "_notes": "This file is a local cache. The authoritative record is the Google Sheet. Status values: discovered | recommended | approved | rejected | purchased | listed | sold"
+}
