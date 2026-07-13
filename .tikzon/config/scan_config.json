@@ -1,0 +1,49 @@
+{
+  "categories": ["beauty", "gadgets", "home"],
+
+  "economics": {
+    "margin_threshold": 0.30,
+    "max_test_budget_usd": 100,
+    "min_supplier_rating": 4.5,
+    "top_suppliers_per_product": 3,
+    "import_duty_rate_default": 0.06,
+    "amazon_referral_fee_rate": 0.15,
+    "fba_fulfillment_fee_small": 3.22,
+    "fba_fulfillment_fee_standard": 5.32,
+    "fba_storage_monthly_per_cubic_ft": 0.78
+  },
+
+  "competition": {
+    "competition_ceiling": 10,
+    "max_avg_reviews": 500
+  },
+
+  "tiktok": {
+    "min_video_views": 100000,
+    "min_engagement_rate": 0.05,
+    "max_products_per_category": 20,
+    "scrape_retries": 3,
+    "retry_interval_minutes": 10
+  },
+
+  "schedule": {
+    "hour": 5,
+    "minute": 0,
+    "timezone": "America/New_York"
+  },
+
+  "amazon": {
+    "marketplace": "US",
+    "seller_account_type": "individual",
+    "gated_categories": [
+      "automotive", "collectibles", "fine-art", "grocery",
+      "health-personal-care", "jewelry", "music", "streaming-media-players",
+      "toys-games", "video-dvd", "watches"
+    ]
+  },
+
+  "digest": {
+    "top_n_products": 5,
+    "send_even_if_empty": true
+  }
+}

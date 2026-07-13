@@ -1,0 +1,24 @@
+{
+  "name": "gemini-skills",
+  "display_name": "Skill Builder",
+  "description": "Creates new Gemini CLI skills, modifies and improves existing skills, runs evaluations, benchmarks skill performance with variance analysis, and optimizes skill descriptions for better triggering accuracy.",
+  "accepted_input_types": ["text", "file"],
+  "trigger_phrases": [
+    "create a new skill",
+    "build a skill for",
+    "improve this skill",
+    "optimize the skill description",
+    "run evals on my skill",
+    "benchmark this skill",
+    "write a skill that",
+    "make a skill for"
+  ],
+  "file": "skills/skill_builder.md",
+  "routable": true,
+  "examples": [
+    "Create a skill that summarizes meeting transcripts",
+    "Help me improve the description on my research skill",
+    "Run evals on the brand kit skill",
+    "Build me a skill for converting CSV to markdown tables"
+  ]
+}

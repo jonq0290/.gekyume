@@ -1,0 +1,20 @@
+﻿{
+  "name": "brand-kit-builder",
+  "display_name": "Brand Kit Builder",
+  "description": "Interactive brand kit consultant that guides users through visual and verbal identity development. Analyzes provided visual references (images, URLs) to extract color palettes, typography, mood, and aesthetic, then builds brand elements one at a time through targeted questions. Produces a complete, styled HTML brand kit page.",
+  "accepted_input_types": ["text", "file", "image"],
+  "trigger_phrases": [
+    "build a brand kit",
+    "brand-kit-builder",
+    "create a brand kit",
+    "brand kit agent",
+    "brand kit builder"
+  ],
+  "file": "skills/brand-kit-builder.md",
+  "routable": true,
+  "examples": [
+    "I want to build a brand kit",
+    "Let's start the brand-kit-builder",
+    "Create a brand identity using these images"
+  ]
+}

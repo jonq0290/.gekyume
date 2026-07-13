@@ -1,0 +1,38 @@
+# =============================================================
+#  [.tikzon] — Python Dependencies
+#  Install with: pip install -r requirements.txt
+#  Then run: playwright install chromium
+# =============================================================
+
+# Web scraping & browser automation
+playwright==1.44.0
+beautifulsoup4==4.12.3
+lxml==5.2.2
+httpx==0.27.0
+
+# Data models & validation
+pydantic==2.7.1
+
+# Google Sheets integration
+gspread==6.1.2
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+
+# Logging & error handling
+loguru==0.7.2
+tenacity==8.3.0
+
+# Templating (email HTML)
+jinja2==3.1.4
+
+# Environment variables
+python-dotenv==1.0.1
+
+# Translation (for 1688 Chinese → English)
+deep-translator==1.11.4
+
+# Scheduling (built-in scheduler, alternative to n8n)
+schedule==1.2.2
+
+# Utilities
+python-dateutil==2.9.0

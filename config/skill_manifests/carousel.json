@@ -1,0 +1,24 @@
+{
+  "name": "carousel",
+  "display_name": "Carousel",
+  "description": "Creates and formats interactive content carousels, slide presentations, and swipeable markdown UI components. Use when the user wants to display content as slides, a gallery, a step-by-step walkthrough, or any sequential multi-panel format.",
+  "accepted_input_types": ["text", "file", "image"],
+  "trigger_phrases": [
+    "show a carousel",
+    "create a slide carousel",
+    "build a carousel component",
+    "make a carousel presentation",
+    "generate a content slider",
+    "turn this into slides",
+    "build a slideshow",
+    "create a gallery"
+  ],
+  "file": "skills/carousel.md",
+  "routable": true,
+  "examples": [
+    "Turn these bullet points into a carousel",
+    "Make a slide presentation for my project overview",
+    "Create a swipeable gallery of these screenshots",
+    "Build a step-by-step carousel for this tutorial"
+  ]
+}

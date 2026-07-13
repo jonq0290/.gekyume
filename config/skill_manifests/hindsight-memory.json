@@ -1,0 +1,26 @@
+{
+  "name": "hindsight-memory",
+  "display_name": "Hindsight Long-Term Memory",
+  "description": "Manages long-term agent memory using the Hindsight framework (Retain, Recall, Reflect). Extracts facts, user preferences, and observations from chat history to update memory/hindsight_memories.json, queries relevant context, and consolidates insights. Use when the user requests memory retrieval, fact extraction, reflection, updating preferences, or invokes '/hindsight'.",
+  "accepted_input_types": [
+    "text"
+  ],
+  "trigger_phrases": [
+    "/hindsight",
+    "hindsight memory",
+    "recall past session",
+    "reflect on history",
+    "retain memory",
+    "consolidate memory",
+    "update memory bank",
+    "what do you remember about"
+  ],
+  "file": "skills/hindsight-memory.md",
+  "routable": true,
+  "examples": [
+    "/hindsight show",
+    "/hindsight recall Coca-Cola brand preferences",
+    "What do you remember about the brand kit we built last session?",
+    "Run hindsight reflection to update my profile"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "mental_models": [
+    {
+      "id": "mm_1",
+      "concept": "Brand Identity Preference",
+      "details": "User prefers high-quality, custom-styled HTML layouts (e.g. vintage aesthetics, specific color palettes like Coca-Cola red/cream, custom typography) over generic templates.",
+      "updated_at": "2026-06-24T18:35:58+02:00"
+    },
+    {
+      "id": "mm_2",
+      "concept": "Content Tone Guide",
+      "details": "For script adaptations, use the SCRAPE framework: direct, confident, conversational, and slightly edgy voice. Avoid corporate fluff, fake excitement, and specific banned words like 'guru' or 'passive income'.",
+      "updated_at": "2026-06-24T18:35:58+02:00"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs_1",
+      "topic": "Skill System Architecture",
+      "details": "Skills in gekyume are markdown system prompts in skills/ registered via config/skills.json and accompanied by individual manifests in config/skill_manifests/.",
+      "updated_at": "2026-06-24T18:35:58+02:00"
+    }
+  ],
+  "facts": [
+    {
+      "id": "fact_1",
+      "entity": "Coca-Cola Brand Kit",
+      "statement": "Created a styled HTML brand-kit.html page with classic red, vintage cream, and clean typography in session 1.",
+      "timestamp": "2026-06-22T18:35:26+02:00",
+      "session_id": 1
+    },
+    {
+      "id": "fact_2",
+      "entity": "Transcript to Script Skill",
+      "statement": "Designed and registered the 'transcript-to-script' skill using the SCRAPE framework in session 2.",
+      "timestamp": "2026-06-22T19:52:04+02:00",
+      "session_id": 2
+    }
+  ],
+  "conflicts": [],
+  "metadata": {
+    "last_updated": "2026-06-24T18:35:58+02:00",
+    "version": "1.0.0"
+  }
+}

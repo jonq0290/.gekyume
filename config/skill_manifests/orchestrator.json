@@ -1,0 +1,20 @@
+{
+  "name": "orchestrator",
+  "display_name": "Orchestrator",
+  "description": "Routes and delegates user requests to specialized skill agents using LLM-based intent classification. Manages session context, handles errors, and presents results. Use for meta-commands about the system: listing skills, viewing routing history, changing the confidence threshold, or asking how the orchestrator works.",
+  "accepted_input_types": ["text"],
+  "trigger_phrases": [
+    "coordinate these agents",
+    "run the orchestrator",
+    "delegate these tasks",
+    "manage the agent team",
+    "orchestrate my workflow",
+    "list available skills",
+    "show routing history",
+    "what skills do you have",
+    "change confidence threshold"
+  ],
+  "file": "skills/orchestrator.md",
+  "routable": false,
+  "note": "routable: false — the orchestrator is the router itself, not a routeable destination for skill work."
+}

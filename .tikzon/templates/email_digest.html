@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[.tikzon] Morning Arbitrage Digest</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f3f4f6;
+      color: #1f2937;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrapper {
+      width: 100%;
+      background-color: #f3f4f6;
+      padding: 24px 12px;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    
+    /* Header section with rich indigo gradient */
+    .header {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: #ffffff;
+      padding: 32px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+    .header p {
+      margin: 8px 0 0 0;
+      font-size: 15px;
+      color: #e0e7ff;
+    }
+    
+    /* Stats Bar */
+    .stats-bar {
+      background-color: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px;
+      text-align: center;
+    }
+    .stats-grid {
+      display: inline-block;
+      width: 100%;
+    }
+    .stat-card {
+      float: left;
+      width: 33.33%;
+      text-align: center;
+    }
+    .stat-val {
+      font-size: 22px;
+      font-weight: 700;
+      color: #4f46e5;
+    }
+    .stat-lbl {
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+    
+    /* Sections */
+    .content {
+      padding: 32px 24px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-left: 4px solid #4f46e5;
+      padding-left: 10px;
+    }
+    
+    /* Product Cards */
+    .product-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    .product-card-header {
+      background-color: #f9fafb;
+      padding: 16px 20px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .product-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      margin: 0;
+      display: inline-block;
+    }
+    .category-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .badge-beauty { background-color: #fdf2f8; color: #db2777; }
+    .badge-gadgets { background-color: #eff6ff; color: #1d4ed8; }
+    .badge-home { background-color: #ecfdf5; color: #047857; }
+    .badge-generic { background-color: #f3f4f6; color: #374151; }
+    
+    .product-card-body {
+      padding: 20px;
+    }
+    
+    /* Metric Highlights */
+    .metrics-row {
+      margin-bottom: 16px;
+    }
+    .metric-col {
+      float: left;
+      width: 50%;
+    }
+    .metric-box {
+      background-color: #f9fafb;
+      border: 1px solid #f3f4f6;
+      border-radius: 6px;
+      padding: 12px;
+      margin-right: 8px;
+    }
+    .metric-box-last {
+      margin-right: 0;
+      margin-left: 8px;
+    }
+    .metric-box-label {
+      font-size: 11px;
+      color: #6b7280;
+      text-transform: uppercase;
+    }
+    .metric-box-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      margin-top: 2px;
+    }
+    .value-green {
+      color: #059669;
+    }
+    
+    /* Details List */
+    .details-list {
+      margin-top: 16px;
+      padding-left: 0;
+      list-style: none;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .details-list li {
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed #f3f4f6;
+    }
+    .details-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .details-label {
+      font-weight: 600;
+      color: #4b5563;
+      display: inline-block;
+      width: 140px;
+    }
+    
+    /* Approval Action Box */
+    .action-box {
+      margin-top: 16px;
+      background-color: #e0e7ff;
+      border: 1px solid #c7d2fe;
+      border-radius: 6px;
+      padding: 12px;
+      font-size: 13px;
+      color: #3730a3;
+    }
+    .action-box code {
+      background-color: #ffffff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-weight: bold;
+      color: #4f46e5;
+    }
+    
+    /* Rejected List Table */
+    .reject-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+    .reject-table th {
+      background-color: #f9fafb;
+      border-bottom: 2px solid #e5e7eb;
+      padding: 8px 12px;
+      text-align: left;
+      font-weight: 600;
+      color: #4b5563;
+    }
+    .reject-table td {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 10px 12px;
+      color: #4b5563;
+    }
+    .reject-reason {
+      color: #dc2626;
+      font-weight: 500;
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: #1f2937;
+      color: #9ca3af;
+      padding: 32px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .footer a {
+      color: #e0e7ff;
+      text-decoration: underline;
+    }
+    .btn-sheet {
+      display: inline-block;
+      background-color: #10b981;
+      color: #ffffff !important;
+      text-decoration: none !important;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      
+      <!-- Brand & Date Header -->
+      <div class="header">
+        <h1>[.tikzon]</h1>
+        <p>Morning Resale Arbitrage Digest &bull; {{ scan_date }} @ {{ scan_time }}</p>
+      </div>
+      
+      <!-- Scan Statistics -->
+      <div class="stats-bar">
+        <div class="stats-grid clearfix">
+          <div class="stat-card">
+            <div class="stat-val">{{ scan_result.total_discovered }}</div>
+            <div class="stat-lbl">Discovered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val">{{ scan_result.total_qualified }}</div>
+            <div class="stat-lbl">Qualified</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" style="color: #059669;">{{ recommendations|length }}</div>
+            <div class="stat-lbl">Passed Gates</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="content">
+        <!-- Recommended Section -->
+        <h2 class="section-title">Top Qualified Opportunities</h2>
+        
+        {% if not recommendations %}
+        <div style="padding: 24px; text-align: center; border: 1px dashed #d1d5db; border-radius: 8px; color: #6b7280; font-size: 15px;">
+          <p style="margin: 0; font-weight: 600;">No products passed the arbitrage validation gates today.</p>
+          <p style="margin: 8px 0 0 0; font-size: 13px;">This usually means margins did not clear the 30% threshold, or products were too heavily gated / branded.</p>
+        </div>
+        {% else %}
+          {% for p in recommendations %}
+          <div class="product-card">
+            
+            <!-- Card Header -->
+            <div class="product-card-header clearfix">
+              <span class="product-title">{{ p.product_name }}</span>
+              {% if p.category == "beauty" %}
+                <span class="category-badge badge-beauty">beauty</span>
+              {% elif p.category == "gadgets" %}
+                <span class="category-badge badge-gadgets">gadgets</span>
+              {% elif p.category == "home" %}
+                <span class="category-badge badge-home">home</span>
+              {% else %}
+                <span class="category-badge badge-generic">{{ p.category }}</span>
+              {% endif %}
+            </div>
+            
+            <!-- Card Body -->
+            <div class="product-card-body">
+              
+              <!-- Metrics grid -->
+              <div class="metrics-row clearfix">
+                <div class="metric-col">
+                  <div class="metric-box">
+                    <div class="metric-box-label">Net Profit</div>
+                    <div class="metric-box-value value-green">${{ p.economics.net_profit }}</div>
+                  </div>
+                </div>
+                <div class="metric-col">
+                  <div class="metric-box metric-box-last">
+                    <div class="metric-box-label">Profit Margin</div>
+                    <div class="metric-box-value value-green">{{ p.economics.margin_pct }}%</div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Sourcing & Resale Metrics -->
+              <ul class="details-list">
+                <li>
+                  <span class="details-label">TikTok Velocity:</span>
+                  <span>{{ p.tiktok_metrics.video_views|filesizeformat|replace('Bytes', '')|replace('B', '') }} views (Rank #{{ p.tiktok_metrics.shop_rank or 'N/A' }} / {{ p.trend_velocity.value }})</span>
+                </li>
+                <li>
+                  <span class="details-label">Amazon Selling:</span>
+                  <span>${{ p.economics.amazon_price }} ({{ p.amazon_status.num_sellers }} active sellers, avg rating {{ p.amazon_status.avg_rating }}★)</span>
+                </li>
+                <li>
+                  <span class="details-label">Best Supplier:</span>
+                  <span>{{ p.best_supplier.supplier_name }} (<strong>{{ p.best_supplier.platform|upper }}</strong>)</span>
+                </li>
+                <li>
+                  <span class="details-label">Landed Cost:</span>
+                  <span>${{ p.best_supplier.landed_cost }} (Unit: ${{ p.best_supplier.unit_cost }}, Ship: ${{ p.best_supplier.shipping_cost }}, Est Duties: ${{ p.best_supplier.estimated_duties }})</span>
+                </li>
+                <li>
+                  <span class="details-label">Test Order Cost:</span>
+                  <span>${{ (p.best_supplier.landed_cost * p.economics.test_units_in_budget)|round(2) }} for {{ p.economics.test_units_in_budget }} units (MOQ: {{ p.best_supplier.moq }})</span>
+                </li>
+                <li>
+                  <span class="details-label">Risk Class:</span>
+                  <span style="font-weight: 600; color: {% if p.risk_class.value == 'sustained' %}#059669{% else %}#d97706{% endif %};">{{ p.risk_class.value|upper }}</span>
+                  <br><small style="color: #6b7280;">{{ p.economics.risk_notes }}</small>
+                </li>
+              </ul>
+              
+              <!-- Approval Action Command -->
+              <div class="action-box">
+                To approve this item for purchasing, reply with: <br>
+                <code>APPROVE: {{ p.product_name }}</code>
+              </div>
+              
+            </div>
+          </div>
+          {% endfor %}
+        {% endif %}
+        
+        <!-- Rejected / Filtered Out Summary -->
+        {% if rejected %}
+        <div style="margin-top: 40px;">
+          <h2 class="section-title">Filtered Out / Rejections</h2>
+          <p style="font-size: 13px; color: #6b7280; margin-top: -12px; margin-bottom: 16px;">
+            These items were identified on TikTok but failed to clear pricing, gating, or competition filters.
+          </p>
+          <table class="reject-table">
+            <thead>
+              <tr>
+                <th style="width: 45%;">Product Name</th>
+                <th style="width: 20%;">Category</th>
+                <th style="width: 35%;">Reason for Rejection</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for p in rejected %}
+              <tr>
+                <td><strong>{{ p.product_name }}</strong></td>
+                <td>{{ p.category }}</td>
+                <td class="reject-reason">{{ p.rejection_reason }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% endif %}
+        
+      </div>
+      
+      <!-- Footer links and commands -->
+      <div class="footer">
+        <a href="{{ sheet_url }}" class="btn-sheet" target="_blank">Open Google Sheets Portal</a>
+        <p style="margin: 0;">This email is automatically generated by [.tikzon] at 5:00 AM.</p>
+        <p style="margin: 6px 0 0 0;">All purchases remain <strong>human-in-the-loop</strong>. The agent does not place orders without approval.</p>
+        <p style="margin: 16px 0 0 0; font-size: 11px; color: #6b7280;">
+          Configured settings: Max risk per product: $100 | Min Profit Margin: 30% | Competition Ceiling: 10 sellers.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

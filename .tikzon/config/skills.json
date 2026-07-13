@@ -1,0 +1,76 @@
+{
+  "skills": [
+    {
+      "name": "arbitrage_pipeline",
+      "description": "Master daily orchestrator — runs the full TikTok-to-Amazon arbitrage research cycle: discovery, sourcing, validation, and digest delivery.",
+      "trigger_phrases": [
+        "run the daily scan",
+        "start the pipeline",
+        "find me products today",
+        "run arbitrage research",
+        "do the morning scan"
+      ],
+      "file": "skills/arbitrage_pipeline.md"
+    },
+    {
+      "name": "tiktok_discovery",
+      "description": "Scans US TikTok Shop bestsellers and viral product videos across beauty, gadgets, and home categories to surface qualifying trending products.",
+      "trigger_phrases": [
+        "what is trending on TikTok",
+        "find trending products",
+        "scan TikTok Shop",
+        "what is going viral",
+        "TikTok product discovery"
+      ],
+      "file": "skills/tiktok_discovery.md"
+    },
+    {
+      "name": "supplier_sourcing",
+      "description": "Searches AliExpress, Alibaba, and 1688 for matching suppliers and ranks the top 3 per product by total landed cost.",
+      "trigger_phrases": [
+        "find suppliers for",
+        "source this product",
+        "search AliExpress for",
+        "what does this cost wholesale",
+        "find me a supplier"
+      ],
+      "file": "skills/supplier_sourcing.md"
+    },
+    {
+      "name": "amazon_checker",
+      "description": "Verifies whether a product category is gated on Amazon, checks competition levels, and pulls FBA fee estimates for profit calculation.",
+      "trigger_phrases": [
+        "check Amazon for",
+        "is this category gated",
+        "how many sellers on Amazon",
+        "check Amazon competition",
+        "get FBA fees for"
+      ],
+      "file": "skills/amazon_checker.md"
+    },
+    {
+      "name": "profit_calculator",
+      "description": "Calculates full landed cost, Amazon FBA fees, and net margin — and applies the 30% go/no-go gate before surfacing a product for recommendation.",
+      "trigger_phrases": [
+        "calculate the margin",
+        "run the profit math",
+        "is this profitable",
+        "calculate FBA profit",
+        "does this hit 30 percent"
+      ],
+      "file": "skills/profit_calculator.md"
+    },
+    {
+      "name": "report_builder",
+      "description": "Writes the daily opportunity digest to Google Sheets and sends the morning email summary to the operator with the top 5 product opportunities.",
+      "trigger_phrases": [
+        "send the daily digest",
+        "build the report",
+        "update Google Sheets",
+        "send the morning email",
+        "generate the opportunity report"
+      ],
+      "file": "skills/report_builder.md"
+    }
+  ]
+}
