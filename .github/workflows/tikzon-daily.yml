@@ -33,13 +33,14 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r .tikzon/requirements.txt
 
       - name: Install Playwright browsers
         run: playwright install chromium
 
       - name: Write service account credentials
-        run: echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}' > config/service_account.json
+        run: echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}' > .tikzon/config/service_account.json
 
       - name: Run daily pipeline
         run: python -m scripts.main --force
+        working-directory: .tikzon
