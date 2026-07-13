@@ -33,7 +33,7 @@ from scripts.sheets_manager import update_google_sheets
 from scripts.email_sender import send_digest
 
 
-def run_full_pipeline() -> ScanResult:
+def run_full_pipeline(no_email: bool = False) -> ScanResult:
     """Run the entire 5-stage research pipeline."""
     errors = []
     opportunities = []
@@ -124,14 +124,18 @@ def run_full_pipeline() -> ScanResult:
 
     # 5b. Send Morning Digest Email
     email_success = False
-    try:
-        logger.info("Stage 5b: Sending morning email digest...")
-        email_success = send_digest(scan_result)
-        if not email_success:
-            errors.append("Email digest sending returned False")
-    except Exception as exc:
-        logger.error(f"Email digest sending failed: {exc}")
-        errors.append(f"Email digest sending failed: {exc}")
+    if no_email:
+        logger.info("Stage 5b: Email skipped (--no-email flag).")
+        email_success = True
+    else:
+        try:
+            logger.info("Stage 5b: Sending morning email digest...")
+            email_success = send_digest(scan_result)
+            if not email_success:
+                errors.append("Email digest sending returned False")
+        except Exception as exc:
+            logger.error(f"Email digest sending failed: {exc}")
+            errors.append(f"Email digest sending failed: {exc}")
 
     # 5c. Local Memory Updates
     try:
@@ -292,6 +296,7 @@ def main():
     parser.add_argument("--force", action="store_true", help="Skip any schedule/lock checks and run immediately")
     parser.add_argument("--approve", type=str, help="Approve a product opportunity by product name")
     parser.add_argument("--daemon", action="store_true", help="Run in daemon mode with standard daily scheduler")
+    parser.add_argument("--no-email", action="store_true", help="Skip sending email digest (useful for --force test runs)")
     
     args = parser.parse_args()
     
@@ -342,7 +347,7 @@ def main():
             sys.exit(0)
     else:
         # Default behavior: run pipeline immediately
-        run_full_pipeline()
+        run_full_pipeline(no_email=args.no_email)
 
 
 if __name__ == "__main__":

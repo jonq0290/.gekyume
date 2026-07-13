@@ -1,6 +1,9 @@
 # Local environment variables
 .env
 
+# Service account credentials (NEVER commit)
+config/service_account.json
+
 # Python bytecode and cache
 __pycache__/
 *.py[cod]

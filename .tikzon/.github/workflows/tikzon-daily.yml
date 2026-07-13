@@ -1,0 +1,45 @@
+name: Tikzon Daily Scan
+
+on:
+  schedule:
+    # Runs daily at 8:00 AM Eastern Time
+    - cron: '0 8 * * *'
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+
+env:
+  SMTP_HOST: smtp.gmail.com
+  SMTP_PORT: 587
+  SMTP_USER: ${{ secrets.SMTP_USER }}
+  SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+  OPERATOR_EMAIL: ${{ secrets.OPERATOR_EMAIL }}
+  GOOGLE_SHEETS_CREDENTIALS_JSON: config/service_account.json
+  GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+  OPERATOR_TIMEZONE: America/New_York
+  SCAN_HOUR: 8
+  SCAN_MINUTE: 0
+
+jobs:
+  daily-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright browsers
+        run: playwright install chromium
+
+      - name: Write service account credentials
+        run: echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}' > config/service_account.json
+
+      - name: Run daily pipeline
+        run: python -m scripts.main --force
